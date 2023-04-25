@@ -1,0 +1,58 @@
+// variables
+
+// Theme Colors
+
+//primary
+$dark-pink: #ba4270 !default;
+$white: #fbfcfe !default;
+
+//secondary
+$dark-blue: #1b262f!default;
+$blue: #36536b !default;
+$light-blue:  #6c8294 !default;
+$light-pink: #da6d97!default;
+
+$form-error: #FF0000!default;
+
+// Button States
+
+//primary
+$primary-normal: $dark-pink;
+$primary-hover:  #DA6D97;
+
+//secondary
+$secondary-normal: transparent;
+$secondary-hover: #FBFCFE;
+
+$disabled: 0.5;
+
+// Font Sizes
+$fs-900: 4.8rem;  //72px
+$fs-800: 3.73rem;  //56px
+$fs-700: 3.2rem;  //48px
+$fs-600: 2.13rem; //32px
+$fs-500: 1.6rem; //24px
+$fs-400: 1.2rem; // 18px
+$fs-base: 1rem; // 15px
+$fs-200: 0.867rem; // 13px
+
+//Line-height
+$lh-body: 1.867rem; //28px
+$lh-h4: 2.133rem; //32px
+$lh-h3-sm: 1.667rem; //25px
+$lh-h3-big: 2.667rem; //40px
+$lh-h2: 3.733rem; //56px
+$lh-h1-sm: $lh-h2; // 56px
+$lh-h1-lg: 4.8rem; //72px
+
+// Spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+// Borders
+$base-border-thickness: 1px;
+$base-border-radius: 20px;
+
+// Box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+
