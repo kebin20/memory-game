@@ -8,11 +8,7 @@ Mobile: 654x800
 
 // Typography
 
-// Titles
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
-
-// Main Text
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap');
 
 /*
   Josh's Custom CSS Reset
@@ -31,8 +27,8 @@ body {
   height: 100%;
 }
 body {
-  font-family: 'Public Sans', sans-serif;
-  font-size: 15px;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: 18px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
