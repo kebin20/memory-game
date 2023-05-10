@@ -1,37 +1,21 @@
 // variables
 
 // Theme Colors
-
-//primary
-$dark-pink: #ba4270 !default;
-$white: #fbfcfe !default;
-
-//secondary
-$dark-blue: #1b262f!default;
-$blue: #36536b !default;
-$light-blue:  #6c8294 !default;
-$light-pink: #da6d97!default;
-
-$form-error: #FF0000!default;
-
-// Button States
-
-//primary
-$primary-normal: $dark-pink;
-$primary-hover:  #DA6D97;
-
-//secondary
-$secondary-normal: transparent;
-$secondary-hover: #FBFCFE;
-
-$disabled: 0.5;
+$black: #152938 !default;
+$white: #fcfcfc !default;
+$orange: #fda214 !default;
+$light-grey: #f2f2f2 !default;
+$grey: #bcced9 !default;
+$dark-grey: #7191a5 !default;
+$blue: #6395b8 !default;
+$dark-blue: #304859 !default;
 
 // Font Sizes
-$fs-900: 4.8rem;  //72px
-$fs-800: 3.73rem;  //56px
-$fs-700: 3.2rem;  //48px
+$fs-900: 4.8rem; //72px
+$fs-800: 3.73rem; //56px
+$fs-700: 3.2rem; //48px
 $fs-600: 2.13rem; //32px
-$fs-500: 1.6rem; //24px
+$fs-500: 1.6rem; //24px         
 $fs-400: 1.2rem; // 18px
 $fs-base: 1rem; // 15px
 $fs-200: 0.867rem; // 13px
@@ -54,5 +38,4 @@ $base-border-thickness: 1px;
 $base-border-radius: 20px;
 
 // Box-shadow
-$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
