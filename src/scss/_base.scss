@@ -1,11 +1,5 @@
 /* Image Sizes*/
 
-/*
-Desktop: 1280x450
-Tablet: 1378x800
-Mobile: 654x800
-*/
-
 // Typography
 
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap');
@@ -53,7 +47,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'DM Serif Display', serif;
   overflow-wrap: break-word;
 }
 
@@ -64,7 +57,7 @@ p {
 ul,
 li,
 a {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
   list-style: none;
   text-decoration: none;
   padding: 0;
