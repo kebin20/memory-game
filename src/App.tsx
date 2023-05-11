@@ -1,9 +1,10 @@
 import Button from './components/Button';
+import "./scss/components/_buttons.scss"
 
 function App() {
   return (
     <>
-      <Button>Test</Button>
+      <Button className="menu-btn-big">Test Big Button</Button>
     </>
   );
 }
