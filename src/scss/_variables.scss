@@ -11,14 +11,12 @@ $blue: #6395b8 !default;
 $dark-blue: #304859 !default;
 
 // Font Sizes
-$fs-900: 4.8rem; //72px
-$fs-800: 3.73rem; //56px
-$fs-700: 3.2rem; //48px
-$fs-600: 2.13rem; //32px
-$fs-500: 1.6rem; //24px         
-$fs-400: 1.2rem; // 18px
-$fs-base: 1rem; // 15px
-$fs-200: 0.867rem; // 13px
+$main-title: 2.667rem; //48px
+$title: 1.778rem; //32px
+$sub-title: 1.111rem; //20px
+$body: 1rem; //18px
+$sixbysix-game: 2.444rem; //44px
+$fourbyfour-game: 3.111rem; //56px
 
 //Line-height
 $lh-body: 1.867rem; //28px
@@ -35,7 +33,4 @@ $base-margin: 0.75rem;
 
 // Borders
 $base-border-thickness: 1px;
-$base-border-radius: 20px;
-
-// Box-shadow
-$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+$base-border-radius: 35px;
