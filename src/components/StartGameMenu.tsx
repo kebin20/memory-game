@@ -9,11 +9,18 @@ function StartGameMenu() {
   return (
     <>
       <h1 className="game-menu-title">memory</h1>
-      <div className="start-game-menu">
-        <div className="select-theme-container">
-          <p>Select Theme</p>
+      <div className="option">
+        <div className="option__container">
+          <p className="option__container__title">Select Theme</p>
           <MenuSelectionButton>Numbers</MenuSelectionButton>
           <MenuSelectionButton>Icons</MenuSelectionButton>
+        </div>
+        <div className="option__container">
+          <p className="option__container__title">Numbers of Players</p>
+          <SecondaryButton>1</SecondaryButton>
+          <SecondaryButton>2</SecondaryButton>
+          <SecondaryButton>3</SecondaryButton>
+          <SecondaryButton>4</SecondaryButton>
         </div>
       </div>
     </>
