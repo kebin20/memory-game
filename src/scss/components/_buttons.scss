@@ -1,15 +1,51 @@
-.menu-btn-big {
-  padding: 0.83rem 10.2rem;
-  background-color: $orange;
-  border-radius: $base-border-radius;
+.btn {
+  color: $white;
+  border: transparent;
+  border-radius: $base-br;
 
-  &:hover {
-    background-color: $light-orange;
+  &__menu-big {
+    padding: 0.83rem 10.2rem;
+    background: $orange;
+
+    &:hover {
+      background-color: $light-orange;
+    }
+  }
+
+  &__menu-selection {
+    padding: 0.556em 4.056em;
+    background: $gray;
+    border-radius: $base-br;
+    color: $white;
+
+    &:hover {
+      background: $blue;
+    }
+
+    &:active {
+      background: $dark-blue;
+    }
+  }
+
+  &__primary {
+    background: $orange;
+    padding: 0.778em 1.611em;
+
+    &:hover {
+      background: $light-orange;
+    }
+  }
+
+  &__secondary {
+    background: $blue;
+    padding: 0.778em 1.611em;
+
+    &:hover {
+      background: $light-gray;
+      color: $dark-blue;
+    }
   }
 }
-
-// .menu-selection-btn {
-// }
 
 // .primary-btn {
 // }
