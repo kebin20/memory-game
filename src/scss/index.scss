@@ -4,7 +4,12 @@
 // base & layout
 @import 'base';
 
+// utility
+@import 'utils';
+
 // components (button,card,navbar)
 @import 'components/navbar';
 
 @import 'components/buttons';
+
+@import 'components/start-game';

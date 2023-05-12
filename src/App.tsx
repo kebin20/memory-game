@@ -1,13 +1,14 @@
-// import {
-//   BigMenuButton,
-//   MenuSelectionButton,
-//   PrimaryButton,
-//   SecondaryButton,
-// } from './components/ButtonComponents';
+import StartGameMenu from './components/StartGameMenu';
 import './scss/index.scss';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <main className="centered-container">
+        <StartGameMenu />
+      </main>
+    </>
+  );
 }
 
 export default App;

@@ -1,0 +1,11 @@
+.game-menu-title {
+  color: $white;
+}
+
+.start-game-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 36.33em;
+  background-color: $white;
+  border-radius: $s-br;
+}
