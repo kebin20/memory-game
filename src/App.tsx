@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import StartGameMenu from './components/StartGameMenu';
 import Navbar from './components/Navbar';
+import FourByFourGameBoard from './components/FourByFourGameboard/FourByFourGameBoard';
 import './scss/index.scss';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         className={`centered-container ${gameStart ? 'white-bg' : 'black-bg'}`}
       >
         {!gameStart && <StartGameMenu startGame={startGame} />}
+        {gameStart && <FourByFourGameBoard />}
       </main>
     </>
   );
