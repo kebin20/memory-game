@@ -4,7 +4,7 @@ import {
   SecondaryButton,
 } from './ButtonComponents';
 
-function StartGameMenu() {
+function StartGameMenu({ startGame }) {
   return (
     <>
       <h1 className="game-menu-title">memory</h1>
@@ -26,7 +26,7 @@ function StartGameMenu() {
           <MenuSelectionButton>4x4</MenuSelectionButton>
           <MenuSelectionButton>6x6</MenuSelectionButton>
         </div>
-        <BigMenuButton>Start Game</BigMenuButton>
+        <BigMenuButton onClick={startGame}>Start Game</BigMenuButton>
       </div>
     </>
   );
