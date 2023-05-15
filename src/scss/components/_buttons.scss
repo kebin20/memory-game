@@ -4,7 +4,7 @@
   border-radius: $lg-br;
 
   &__menu-big {
-    padding: 0.83rem 10.2rem;
+    padding: 0.83rem 5.2rem;
     background: $orange;
 
     &:hover {
@@ -13,10 +13,10 @@
   }
 
   &__menu-selection {
-    padding: 0.556em 4.056em;
+    padding: 0.556em 2.056em;
     background: $gray;
     color: $white;
-
+    grid-column: span 2;
     &:hover {
       background: $blue;
     }
@@ -36,8 +36,8 @@
   }
 
   &__secondary {
-    background: $blue;
-    padding: 0.778em 1.611em;
+    background: $gray;
+    padding: 0.578em 1.611em;
 
     &:hover {
       background: $light-gray;

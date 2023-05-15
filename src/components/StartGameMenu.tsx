@@ -1,7 +1,6 @@
 import {
   BigMenuButton,
   MenuSelectionButton,
-  PrimaryButton,
   SecondaryButton,
 } from './ButtonComponents';
 
@@ -22,6 +21,12 @@ function StartGameMenu() {
           <SecondaryButton>3</SecondaryButton>
           <SecondaryButton>4</SecondaryButton>
         </div>
+        <div className="option__container">
+          <p className="option__container__title">Grid Size</p>
+          <MenuSelectionButton>4x4</MenuSelectionButton>
+          <MenuSelectionButton>6x6</MenuSelectionButton>
+        </div>
+        <BigMenuButton>Start Game</BigMenuButton>
       </div>
     </>
   );
