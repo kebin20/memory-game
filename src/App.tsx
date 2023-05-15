@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import StartGameMenu from './components/StartGameMenu';
+import Navbar from './components/Navbar';
 import './scss/index.scss';
 
 function App() {
@@ -7,11 +8,15 @@ function App() {
 
   function startGame() {
     setGameStart(true);
-    console.log('clicked');
+  }
+
+  function returnToMenu() {
+    setGameStart(false);
   }
 
   return (
     <>
+      {gameStart && <Navbar returnToMenu={returnToMenu} />}
       <main
         className={`centered-container ${gameStart ? 'white-bg' : 'black-bg'}`}
       >
