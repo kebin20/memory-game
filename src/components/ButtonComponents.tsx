@@ -32,4 +32,18 @@ function SecondaryButton(props) {
   );
 }
 
-export { BigMenuButton, MenuSelectionButton, PrimaryButton, SecondaryButton };
+function CircleButton(props) {
+  return (
+    <button onClick={props.onClick} className="circle-button">
+      {props.children}
+    </button>
+  );
+}
+
+export {
+  BigMenuButton,
+  MenuSelectionButton,
+  PrimaryButton,
+  SecondaryButton,
+  CircleButton,
+};
