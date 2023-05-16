@@ -53,4 +53,10 @@
   height: 72px;
   border-radius: 50%;
   background-color: $gray;
+  border: transparent;
+
+  &:hover {
+    background: $light-gray;
+    color: $dark-blue;
+  }
 }
