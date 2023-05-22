@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import StartGameMenu from './components/StartGameMenu';
+import FourByFourGameBoard from './components/FourByFourGameBoard/FourByFourGameBoard';
 import Navbar from './components/Navbar';
-import FourByFourGameBoard from './components/FourByFourGameboard/FourByFourGameBoard';
+import StartGameMenu from './components/StartGameMenu';
 import './scss/index.scss';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
       {gameStart && <Navbar returnToMenu={returnToMenu} />}
       <main
         className={`centered-container ${gameStart ? 'white-bg' : 'black-bg'}`}
+        style={{ height: gameStart ? '100%' : '100vh' }}
       >
         {!gameStart && <StartGameMenu startGame={startGame} />}
         {gameStart && <FourByFourGameBoard />}
