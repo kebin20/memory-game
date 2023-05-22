@@ -1,4 +1,4 @@
-function playerScoreBox() {
+function PlayerScoreBox() {
   return (
     <div className="score-box-container">
       <div className="score-box">
@@ -21,4 +21,4 @@ function playerScoreBox() {
   );
 }
 
-export default playerScoreBox;
+export default PlayerScoreBox;
