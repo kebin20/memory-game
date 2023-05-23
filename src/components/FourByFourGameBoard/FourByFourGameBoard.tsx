@@ -14,14 +14,13 @@ function FourByFourGameBoard() {
 
       numberArray.push(number, duplicateNumber);
     }
-    return numberArray;
+    const randomisedNumbers = numberArray.sort(() => Math.random() - 0.5);
+    return randomisedNumbers;
   }
 
-console.log(numbers)
-
   const circles = numbers.map((number) => (
-    <CircleButton className="circle-buttons" key={number}>
-      {number}
+    <CircleButton className="circle-buttons" key={number.id}>
+      {number.value}
     </CircleButton>
   ));
 
