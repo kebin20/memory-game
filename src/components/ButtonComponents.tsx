@@ -1,5 +1,7 @@
 import Button from './Button';
 
+import { CircleButtonType } from '../types';
+
 function BigMenuButton(props) {
   return (
     <Button onClick={props.onClick} className="btn btn__menu-big">
@@ -32,12 +34,14 @@ function SecondaryButton(props) {
   );
 }
 
-function CircleButton(props) {
+function CircleButton(props: CircleButtonType) {
   return (
     <button
-      onClick={props.onClick}
+      onClick={props.onFlipNumber}
       className={
-        props.isFlipped ? 'circle-button' : 'circle-button circle-button__flipped'
+        props.isFlipped
+          ? 'circle-button'
+          : 'circle-button circle-button__flipped'
       }
     >
       {props.children}

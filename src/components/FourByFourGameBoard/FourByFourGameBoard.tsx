@@ -18,8 +18,22 @@ function FourByFourGameBoard() {
     return randomisedNumbers;
   }
 
+  function flipNumbers(id: string) {
+    setNumbers((prevNumbers) =>
+      prevNumbers.map((number) => {
+        return number.id === id
+          ? { ...number, isFlipped: !number.isFlipped }
+          : number;
+      })
+    );
+  }
+
   const circles = numbers.map((number) => (
-    <CircleButton className="circle-buttons" key={number.id}>
+    <CircleButton
+      onFlipNumber={() => flipNumbers(number.id)}
+      key={number.id}
+      isFlipped={number.isFlipped}
+    >
       {number.value}
     </CircleButton>
   ));
