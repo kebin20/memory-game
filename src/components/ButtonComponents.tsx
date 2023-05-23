@@ -33,6 +33,8 @@ function SecondaryButton(props) {
 }
 
 function CircleButton(props) {
+  const styles = { backgroundColor: props.isHeld ? '#59E391' : 'white' };
+
   return (
     <button onClick={props.onClick} className="circle-button">
       {props.children}
