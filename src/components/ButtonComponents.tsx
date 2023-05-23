@@ -37,7 +37,7 @@ function CircleButton(props) {
     <button
       onClick={props.onClick}
       className={
-        props.isHeld ? 'circle-button' : 'circle-button circle-button__held'
+        props.isFlipped ? 'circle-button' : 'circle-button circle-button__flipped'
       }
     >
       {props.children}

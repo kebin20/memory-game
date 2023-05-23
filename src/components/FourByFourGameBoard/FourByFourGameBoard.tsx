@@ -1,8 +1,17 @@
+import { useState } from 'react';
 import { CircleButton } from '../ButtonComponents';
 import ScoreBox from '../PlayerScoreBox';
 
 function FourByFourGameBoard() {
-  const numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+  const [numbers, setNumbers] = useState(createNumbers());
+
+  function createNumbers() {
+    const numberArray = [];
+    for (let i = 1; i <= 8; i++) {
+      numberArray.push(i, i);
+    }
+    return numberArray;
+  }
 
   const circles = numbers.map((number) => (
     <CircleButton className="circle-buttons" key={number}>
