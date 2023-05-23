@@ -1,10 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CircleButton } from '../ButtonComponents';
 import ScoreBox from '../PlayerScoreBox';
 import { nanoid } from 'nanoid';
 
 function FourByFourGameBoard() {
   const [numbers, setNumbers] = useState(createNumbers());
+  // const [isMatch, setIsMatch] = useState(false);
+
+  // useEffect(() => {
+  //   const allFlippedNumbers = numbers.every((number) => number.isFlipped);
+  //   const initialNumber = numbers[0].value;
+  //   const allSameNumber = numbers.every(
+  //     (number) => number.value === initialNumber
+  //   );
+  //   if (allFlippedNumbers && allSameNumber) {
+  //     setIsMatch(true);
+  //   }
+  // }, [numbers]);
+
+  // console.log(isMatch ? 'Yay' : 'Aww');
 
   function createNumbers() {
     const numberArray = [];
