@@ -27,8 +27,9 @@
   }
 
   &__primary {
+    font-size: $small;
     background: $orange;
-    padding: 0.778em 1.611em;
+    padding: 0.5em 1.3em;
 
     &:hover {
       background: $light-orange;
