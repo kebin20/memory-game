@@ -5,32 +5,25 @@ import { nanoid } from 'nanoid';
 
 function FourByFourGameBoard() {
   const [numbers, setNumbers] = useState(createNumbers());
-  const [isMatch, setIsMatch] = useState(false);
+  // const [isMatch, setIsMatch] = useState(false);
+
+  // console.log(isMatch ? 'Yay' : 'Aww');
 
   useEffect(() => {
-    const initialFlippedNumber = numbers.find((number) => number.isFlipped);
-
-    if (initialFlippedNumber) {
-      console.log('Initial Flipped Number:', initialFlippedNumber.value);
-
-      const nextFlippedNumber = numbers.find(
-        (number) => number.isFlipped && number.id !== initialFlippedNumber.id
-      );
-
-      if (nextFlippedNumber) {
-        console.log('Next Flipped Number:', nextFlippedNumber.value);
-
-        if (initialFlippedNumber.value === nextFlippedNumber.value) {
-          // console.log('is a match!');
-          setIsMatch(true)
-        } else {
-          // console.log('no match');
-        }
-      }
-    }
+    checkForMatch();
   }, [numbers]);
 
-  console.log(isMatch ? 'Yay' : 'Aww');
+  function checkForMatch() {
+    const flippedNumbers = numbers.filter((number) => number.isFlipped);
+
+    if (flippedNumbers.length === 2) {
+      if (flippedNumbers[0].value === flippedNumbers[1].value) {
+        console.log('Match!');
+      } else {
+        console.log('No match');
+      }
+    }
+  }
 
   function createNumbers() {
     const numberArray = [];
@@ -52,6 +45,7 @@ function FourByFourGameBoard() {
           : number;
       })
     );
+    checkForMatch();
   }
 
   const circles = numbers.map((number) => (
