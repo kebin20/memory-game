@@ -5,20 +5,32 @@ import { nanoid } from 'nanoid';
 
 function FourByFourGameBoard() {
   const [numbers, setNumbers] = useState(createNumbers());
-  // const [isMatch, setIsMatch] = useState(false);
+  const [isMatch, setIsMatch] = useState(false);
 
-  // useEffect(() => {
-  //   const allFlippedNumbers = numbers.every((number) => number.isFlipped);
-  //   const initialNumber = numbers[0].value;
-  //   const allSameNumber = numbers.every(
-  //     (number) => number.value === initialNumber
-  //   );
-  //   if (allFlippedNumbers && allSameNumber) {
-  //     setIsMatch(true);
-  //   }
-  // }, [numbers]);
+  useEffect(() => {
+    const initialFlippedNumber = numbers.find((number) => number.isFlipped);
 
-  // console.log(isMatch ? 'Yay' : 'Aww');
+    if (initialFlippedNumber) {
+      console.log('Initial Flipped Number:', initialFlippedNumber.value);
+
+      const nextFlippedNumber = numbers.find(
+        (number) => number.isFlipped && number.id !== initialFlippedNumber.id
+      );
+
+      if (nextFlippedNumber) {
+        console.log('Next Flipped Number:', nextFlippedNumber.value);
+
+        if (initialFlippedNumber.value === nextFlippedNumber.value) {
+          // console.log('is a match!');
+          setIsMatch(true)
+        } else {
+          // console.log('no match');
+        }
+      }
+    }
+  }, [numbers]);
+
+  console.log(isMatch ? 'Yay' : 'Aww');
 
   function createNumbers() {
     const numberArray = [];
