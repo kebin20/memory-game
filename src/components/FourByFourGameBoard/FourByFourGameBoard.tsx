@@ -7,8 +7,6 @@ function FourByFourGameBoard() {
   const [numbers, setNumbers] = useState(createNumbers());
   // const [isMatch, setIsMatch] = useState(false);
 
-  // console.log(isMatch ? 'Yay' : 'Aww');
-
   useEffect(() => {
     checkForMatch();
   }, [numbers]);
@@ -45,7 +43,6 @@ function FourByFourGameBoard() {
           : number;
       })
     );
-    checkForMatch();
   }
 
   const circles = numbers.map((number) => (
