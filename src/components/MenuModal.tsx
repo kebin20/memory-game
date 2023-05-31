@@ -1,12 +1,15 @@
-import { MenuSelectionButton } from './ButtonComponents';
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from './ButtonComponents';
 
 function MenuModal() {
   return (
     <div className="backdrop">
       <div className="menu-modal">
-        <MenuSelectionButton>Restart</MenuSelectionButton>
-        <MenuSelectionButton>New Game</MenuSelectionButton>
-        <MenuSelectionButton>Resume Game</MenuSelectionButton>
+        <PrimaryButton>Restart</PrimaryButton>
+        <SecondaryButton>New Game</SecondaryButton>
+        <SecondaryButton>Resume Game</SecondaryButton>
       </div>
     </div>
   );

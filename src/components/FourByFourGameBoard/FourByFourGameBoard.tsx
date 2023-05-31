@@ -58,7 +58,7 @@ function FourByFourGameBoard() {
 
   return (
     <>
-      <MenuModal />
+      {/* <MenuModal /> */}
       <div className="game-board-container">{circles}</div>
       <ScoreBox />
     </>
