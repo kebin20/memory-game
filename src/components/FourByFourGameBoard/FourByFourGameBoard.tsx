@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CircleButton } from '../ButtonComponents';
 import ScoreBox from '../PlayerScoreBox';
+import MenuModal from '../MenuModal';
 import { nanoid } from 'nanoid';
 
 function FourByFourGameBoard() {
@@ -57,6 +58,7 @@ function FourByFourGameBoard() {
 
   return (
     <>
+      <MenuModal />
       <div className="game-board-container">{circles}</div>
       <ScoreBox />
     </>
