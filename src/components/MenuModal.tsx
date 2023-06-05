@@ -4,6 +4,7 @@ import {
 } from './ButtonComponents';
 
 function MenuModal() {
+
   return (
     <div className="backdrop">
       <div className="menu-modal">

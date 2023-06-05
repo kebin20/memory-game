@@ -1,11 +1,11 @@
 import { PrimaryButton } from './ButtonComponents';
 
-function Navbar({ returnToMenu }) {
+function Navbar({ openMenu }: { openMenu: () => void }) {
   return (
     <header className="navbar">
       <h1 className="navbar__logo">memory</h1>
       <nav>
-        <PrimaryButton onClick={returnToMenu}>Menu</PrimaryButton>
+        <PrimaryButton onClick={openMenu}>Menu</PrimaryButton>
       </nav>
     </header>
   );

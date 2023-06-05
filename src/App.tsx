@@ -6,24 +6,25 @@ import './scss/index.scss';
 
 function App() {
   const [gameStart, setGameStart] = useState(false);
+  const [openMenuModal, setOpenMenuModal] = useState(false);
 
   function startGame() {
-    setGameStart(true);
+    setGameStart((prevStart) => !prevStart);
   }
 
-  function returnToMenu() {
-    setGameStart(false);
+  function openMenu() {
+    setOpenMenuModal((prevOpen) => !prevOpen);
   }
 
   return (
     <>
-      {gameStart && <Navbar returnToMenu={returnToMenu} />}
+      {gameStart && <Navbar openMenu={openMenu} />}
       <main
         className={`centered-container ${gameStart ? 'white-bg' : 'black-bg'}`}
         style={{ height: gameStart ? '100%' : '100vh' }}
       >
         {!gameStart && <StartGameMenu startGame={startGame} />}
-        {gameStart && <FourByFourGameBoard />}
+        {gameStart && <FourByFourGameBoard openMenuModal={openMenuModal} />}
       </main>
     </>
   );
