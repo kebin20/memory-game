@@ -10,6 +10,7 @@ function App() {
 
   function startGame() {
     setGameStart((prevStart) => !prevStart);
+    setMenuModalOpen(false);
   }
 
   function openMenu() {
@@ -24,7 +25,13 @@ function App() {
         style={{ height: gameStart ? '100%' : '100vh' }}
       >
         {!gameStart && <StartGameMenu startGame={startGame} />}
-        {gameStart && <FourByFourGameBoard menuModalOpen={menuModalOpen} />}
+        {gameStart && (
+          <FourByFourGameBoard
+            onStartGame={startGame}
+            onOpenMenu={openMenu}
+            menuModalOpen={menuModalOpen}
+          />
+        )}
       </main>
     </>
   );

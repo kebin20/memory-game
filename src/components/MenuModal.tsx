@@ -1,16 +1,12 @@
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from './ButtonComponents';
+import { PrimaryButton, SecondaryButton } from './ButtonComponents';
 
-function MenuModal() {
-
+function MenuModal({ onStartGame, onOpenMenu }) {
   return (
     <div className="backdrop">
       <div className="menu-modal">
         <PrimaryButton>Restart</PrimaryButton>
-        <SecondaryButton>New Game</SecondaryButton>
-        <SecondaryButton>Resume Game</SecondaryButton>
+        <SecondaryButton onClick={onStartGame}>New Game</SecondaryButton>
+        <SecondaryButton onClick={onOpenMenu}>Resume Game</SecondaryButton>
       </div>
     </div>
   );
