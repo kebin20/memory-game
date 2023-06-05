@@ -6,14 +6,14 @@ import './scss/index.scss';
 
 function App() {
   const [gameStart, setGameStart] = useState(false);
-  const [openMenuModal, setOpenMenuModal] = useState(false);
+  const [menuModalOpen, setMenuModalOpen] = useState(false);
 
   function startGame() {
     setGameStart((prevStart) => !prevStart);
   }
 
   function openMenu() {
-    setOpenMenuModal((prevOpen) => !prevOpen);
+    setMenuModalOpen((prevOpen) => !prevOpen);
   }
 
   return (
@@ -24,7 +24,7 @@ function App() {
         style={{ height: gameStart ? '100%' : '100vh' }}
       >
         {!gameStart && <StartGameMenu startGame={startGame} />}
-        {gameStart && <FourByFourGameBoard openMenuModal={openMenuModal} />}
+        {gameStart && <FourByFourGameBoard menuModalOpen={menuModalOpen} />}
       </main>
     </>
   );

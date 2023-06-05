@@ -4,7 +4,7 @@ import ScoreBox from '../PlayerScoreBox';
 import MenuModal from '../MenuModal';
 import { nanoid } from 'nanoid';
 
-function FourByFourGameBoard(props: { openMenuModal: boolean }) {
+function FourByFourGameBoard({ menuModalOpen }: any) {
   const [numbers, setNumbers] = useState(createNumbers());
   // const [isMatch, setIsMatch] = useState(false);
 
@@ -58,7 +58,7 @@ function FourByFourGameBoard(props: { openMenuModal: boolean }) {
 
   return (
     <>
-      {props.openMenuModal && <MenuModal />}
+      {menuModalOpen && <MenuModal />}
       <div className="game-board-container">{circles}</div>
       <ScoreBox />
     </>
