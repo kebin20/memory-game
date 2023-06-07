@@ -4,7 +4,7 @@ import ScoreBox from '../PlayerScoreBox';
 import MenuModal from '../MenuModal';
 import { nanoid } from 'nanoid';
 
-function FourByFourGameBoard({ menuModalOpen, onStartGame, onOpenMenu }: any) {
+function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
   const [numbers, setNumbers] = useState(createNumbers());
   // const [isMatch, setIsMatch] = useState(false);
 
@@ -67,4 +67,4 @@ function FourByFourGameBoard({ menuModalOpen, onStartGame, onOpenMenu }: any) {
   );
 }
 
-export default FourByFourGameBoard;
+export default FourByFour;

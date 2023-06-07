@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import FourByFourGameBoard from './components/FourByFourGameBoard/FourByFourGameBoard';
+import FourByFour from './components/GameBoards/FourByFour';
 import Navbar from './components/Navbar';
 import StartGameMenu from './components/StartGameMenu';
 import './scss/index.scss';
@@ -26,7 +26,7 @@ function App() {
       >
         {!gameStart && <StartGameMenu startGame={startGame} />}
         {gameStart && (
-          <FourByFourGameBoard
+          <FourByFour
             onStartGame={startGame}
             onOpenMenu={openMenu}
             menuModalOpen={menuModalOpen}
