@@ -14,7 +14,9 @@
 
 @import 'components/start-game';
 
-@import 'components/GameBoard/_four-by-four.scss';
+@import 'components/GameBoards/_four-by-four';
+
+@import 'components/GameOverModals/_solo-game-over';
 
 @import 'components/score-box';
 

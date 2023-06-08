@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { CircleButton } from '../ButtonComponents';
 import ScoreBox from '../PlayerScoreBox';
 import MenuModal from '../MenuModal';
+import SoloGameOver from '../GameOverScreen/SoloGameOver';
 import { nanoid } from 'nanoid';
 
 function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
@@ -61,6 +62,7 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
       {menuModalOpen && (
         <MenuModal onStartGame={onStartGame} onOpenMenu={onOpenMenu} />
       )}
+      <SoloGameOver />
       <div className="game-board-container">{circles}</div>
       <ScoreBox />
     </>
