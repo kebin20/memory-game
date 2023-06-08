@@ -35,9 +35,15 @@ function SecondaryButton(props) {
 }
 
 function CircleButton(props: CircleButtonType) {
+  const buttonStyle = {
+    backgroundColor: props.isMatched ? 'green' : 'blue', // Set the desired colors for matched and unmatched numbers
+    // Other styles...
+  };
+
   return (
     <button
       onClick={props.onFlipNumber}
+      style={buttonStyle}
       className={
         props.isFlipped
           ? 'circle-button'

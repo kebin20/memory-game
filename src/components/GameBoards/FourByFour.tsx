@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { CircleButton } from '../ButtonComponents';
 import ScoreBox from '../PlayerScoreBox';
 import MenuModal from '../MenuModal';
-import SoloGameOver from '../GameOverScreen/SoloGameOver';
+// import SoloGameOver from '../GameOverScreen/SoloGameOver';
 import { nanoid } from 'nanoid';
 
 function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
   const [numbers, setNumbers] = useState(createNumbers());
-  // const [isMatch, setIsMatch] = useState(false);
+  const [matchedNumbers, setMatchedNumbers] = useState([]);
 
   useEffect(() => {
     checkForMatch();
@@ -15,10 +15,11 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
 
   function checkForMatch() {
     const flippedNumbers = numbers.filter((number) => number.isFlipped);
-
+    console.log(flippedNumbers);
     if (flippedNumbers.length === 2) {
       if (flippedNumbers[0].value === flippedNumbers[1].value) {
         console.log('Match!');
+        setMatchedNumbers([...matchedNumbers, flippedNumbers[0].value]);
       } else {
         console.log('No match');
       }
@@ -47,22 +48,28 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
     );
   }
 
-  const circles = numbers.map((number) => (
-    <CircleButton
-      onFlipNumber={() => flipNumbers(number.id)}
-      key={number.id}
-      isFlipped={number.isFlipped}
-    >
-      {number.value}
-    </CircleButton>
-  ));
+  const circles = numbers.map((number) => {
+    const isMatched = matchedNumbers.includes(number.value);
+    return (
+      <CircleButton
+        onFlipNumber={() => flipNumbers(number.id)}
+        key={number.id}
+        isFlipped={number.isFlipped}
+        isMatched={isMatched}
+      >
+        {number.value}
+      </CircleButton>
+    );
+  });
+
+  console.log(circles);
 
   return (
     <>
       {menuModalOpen && (
         <MenuModal onStartGame={onStartGame} onOpenMenu={onOpenMenu} />
       )}
-      <SoloGameOver />
+      {/* <SoloGameOver onStartGame={onStartGame} /> */}
       <div className="game-board-container">{circles}</div>
       <ScoreBox />
     </>
