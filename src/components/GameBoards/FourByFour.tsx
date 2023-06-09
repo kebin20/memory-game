@@ -12,31 +12,6 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
     checkForMatch();
   }, [numbers]);
 
-  // function checkForMatch() {
-  //   const flippedNumbers = numbers.filter((number) => number.isFlipped);
-  //   console.log(flippedNumbers);
-  //   if (flippedNumbers.length === 2) {
-  //     if (flippedNumbers[0].value === flippedNumbers[1].value) {
-  //       console.log('Match!');
-
-  //       setNumbers((prevNumbers) =>
-  //         prevNumbers.map((number) => {
-  //           if (
-  //             number.isFlipped &&
-  //             (number.value === flippedNumbers[0].value ||
-  //               number.value === flippedNumbers[1].value)
-  //           ) {
-  //             return { ...number, isMatched: true };
-  //           }
-  //           return number;
-  //         })
-  //       );
-  //     } else {
-  //       console.log('No match');
-  //     }
-  //   }
-  // }
-
   function checkForMatch() {
     const flippedNumbers = numbers.filter((number) => number.isFlipped && !number.isMatched);
     console.log(flippedNumbers);
