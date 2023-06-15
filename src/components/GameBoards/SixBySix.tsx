@@ -40,7 +40,7 @@ function SixBySix({ menuModalOpen, onStartGame, onOpenMenu }: any) {
 
   function createNumbers() {
     const numberArray = [];
-    for (let i = 1; i <= 16; i++) {
+    for (let i = 1; i <= 18; i++) {
       const number = {
         id: nanoid(),
         value: i,
@@ -91,7 +91,9 @@ function SixBySix({ menuModalOpen, onStartGame, onOpenMenu }: any) {
         <MenuModal onStartGame={onStartGame} onOpenMenu={onOpenMenu} />
       )}
       {/* <SoloGameOver onStartGame={onStartGame} /> */}
-      <div className="game-board-container">{circles}</div>
+      <div className="game-board-container game-board-container__six-by-six">
+        {circles}
+      </div>
       <ScoreBox />
     </>
   );

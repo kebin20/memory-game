@@ -88,7 +88,7 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
         <MenuModal onStartGame={onStartGame} onOpenMenu={onOpenMenu} />
       )}
       {/* <SoloGameOver onStartGame={onStartGame} /> */}
-      <div className="game-board-container">{circles}</div>
+      <div className="game-board-container game-board-container__four-by-four">{circles}</div>
       <ScoreBox />
     </>
   );

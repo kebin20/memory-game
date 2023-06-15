@@ -1,0 +1,14 @@
+.game-board-container {
+  display: grid;
+  gap: 1em;
+  margin-bottom: auto;
+  padding: 4em;
+
+  &__four-by-four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__six-by-six {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
