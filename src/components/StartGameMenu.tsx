@@ -4,7 +4,7 @@ import {
   SecondaryButton,
 } from './ButtonComponents';
 
-function StartGameMenu({ startGame }) {
+function StartGameMenu({ startGame, onFourByFourClick, onSixBySixClick }) {
   return (
     <>
       <h1 className="game-menu-title">memory</h1>
@@ -23,8 +23,12 @@ function StartGameMenu({ startGame }) {
         </div>
         <div className="option__container">
           <p className="option__container__title">Grid Size</p>
-          <MenuSelectionButton>4x4</MenuSelectionButton>
-          <MenuSelectionButton>6x6</MenuSelectionButton>
+          <MenuSelectionButton onClick={onFourByFourClick}>
+            4x4
+          </MenuSelectionButton>
+          <MenuSelectionButton onClick={onSixBySixClick}>
+            6x6
+          </MenuSelectionButton>
         </div>
         <BigMenuButton onClick={startGame}>Start Game</BigMenuButton>
       </div>
