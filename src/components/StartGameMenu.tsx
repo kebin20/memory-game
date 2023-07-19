@@ -4,7 +4,15 @@ import {
   SecondaryButton,
 } from './ButtonComponents';
 
-function StartGameMenu({ startGame, onFourByFourClick, onSixBySixClick }) {
+function StartGameMenu({
+  startGame,
+  onFourByFourClick,
+  onSixBySixClick,
+}: {
+  startGame: () => void;
+  onFourByFourClick: () => void;
+  onSixBySixClick: () => void;
+}) {
   return (
     <>
       <h1 className="game-menu-title">memory</h1>
