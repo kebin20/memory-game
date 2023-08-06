@@ -67,8 +67,19 @@
     color: $dark-blue;
 
     &:hover {
-      background-color: $blue;
-      color: $blue;
+      background-color: $dark-blue;
+      color: $dark-blue;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .circle-button {
+    &__flipped {
+      &:hover {
+        background-color: $dark-blue;
+        color: $dark-blue;
+      }
     }
   }
 }
