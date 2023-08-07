@@ -1,11 +1,11 @@
-function Button(props) {
+function Button({type, onClick, className, children} : any) {
   return (
     <button
-      type={props.type || 'button'}
-      onClick={props.onClick}
-      className={props.className}
+      type={type || 'button'}
+      onClick={onClick}
+      className={className}
     >
-      {props.children}
+      {children}
     </button>
   );
 }
