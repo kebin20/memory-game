@@ -1,26 +1,37 @@
-import { useEffect, useState } from 'react';
-import { CircleButton } from '../ButtonComponents';
-import ScoreBox from '../PlayerScoreBox';
-import MenuModal from '../MenuModal';
+import { useEffect, useState } from "react";
+import { CircleButton } from "../ButtonComponents";
+import ScoreBox from "../PlayerScoreBox";
+import MenuModal from "../MenuModal";
 // import SoloGameOver from '../GameOverScreen/SoloGameOver';
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 
 function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
   const [numbers, setNumbers] = useState(createNumbers());
 
+  const [score, setScore] = useState(0);
+
   useEffect(() => {
     checkForMatch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numbers]);
 
+  function addToScore() {
+    setScore((prevScore) => prevScore + 1);
+  }
+
   function checkForMatch() {
-    const flippedNumbers = numbers.filter((number) => number.isFlipped && !number.isMatched);
+    const flippedNumbers = numbers.filter(
+      (number) => number.isFlipped && !number.isMatched
+    );
     console.log(flippedNumbers);
     if (flippedNumbers.length >= 2) {
       const matchedValues = flippedNumbers.map((number) => number.value);
-      const isAllMatched = flippedNumbers.every((number) => number.value === matchedValues[0]);
+      const isAllMatched = flippedNumbers.every(
+        (number) => number.value === matchedValues[0]
+      );
       if (isAllMatched) {
-        console.log('Match!');
-    
+        console.log("Match!");
+        addToScore();
         setNumbers((prevNumbers) =>
           prevNumbers.map((number) => {
             if (matchedValues.includes(number.value)) {
@@ -30,7 +41,7 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
           })
         );
       } else {
-        console.log('No match');
+        console.log("No match");
       }
     }
   }
@@ -88,8 +99,10 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
         <MenuModal onStartGame={onStartGame} onOpenMenu={onOpenMenu} />
       )}
       {/* <SoloGameOver onStartGame={onStartGame} /> */}
-      <div className="game-board-container game-board-container__four-by-four">{circles}</div>
-      <ScoreBox />
+      <div className="game-board-container game-board-container__four-by-four">
+        {circles}
+      </div>
+      <ScoreBox score={score} />
     </>
   );
 }
