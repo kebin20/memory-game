@@ -12,7 +12,7 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
 
   useEffect(() => {
     checkForMatch();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [numbers]);
 
   function addToScore() {
@@ -40,8 +40,17 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
             return number;
           })
         );
+        //NOTE: Need to try and get the matched numbers to stay highlighted. Kinda like this => else if (numbers.includes(number.isMatched: true))
       } else {
-        console.log("No match");
+        setTimeout(
+          () =>
+            setNumbers((prevNumbers) =>
+              prevNumbers.map((number) => {
+                return { ...number, isFlipped: false, isMatched: false};
+              })
+            ),
+          1000
+        );
       }
     }
   }
