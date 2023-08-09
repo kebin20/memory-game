@@ -6,3 +6,12 @@ export type CircleButtonType = {
   isMatched: boolean;
   children?: ReactNode;
 };
+
+type ButtonType = "button" | "submit" | "reset";
+
+export type GenericButtonType = {
+  type: ButtonType
+  onClick: () => void;
+  className: string;
+  children?: ReactNode;
+}
