@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import { CircleButton } from "../ButtonComponents";
 import ScoreBox from "../PlayerScoreBox";
 import MenuModal from "../MenuModal";
+import { FourByFourProps } from "../../models";
 // import SoloGameOver from '../GameOverScreen/SoloGameOver';
 import { nanoid } from "nanoid";
 
-function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
+function FourByFour({
+  menuModalOpen,
+  onStartGame,
+  onOpenMenu,
+}: FourByFourProps) {
   const [numbers, setNumbers] = useState(createNumbers());
-
   const [score, setScore] = useState(0);
 
   useEffect(() => {
@@ -23,14 +27,12 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
     const flippedNumbers = numbers.filter(
       (number) => number.isFlipped && !number.isMatched
     );
-    console.log(flippedNumbers);
     if (flippedNumbers.length >= 2) {
       const matchedValues = flippedNumbers.map((number) => number.value);
       const isAllMatched = flippedNumbers.every(
         (number) => number.value === matchedValues[0]
       );
       if (isAllMatched) {
-        console.log("Match!");
         addToScore();
         setNumbers((prevNumbers) =>
           prevNumbers.map((number) => {
@@ -46,10 +48,13 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
           () =>
             setNumbers((prevNumbers) =>
               prevNumbers.map((number) => {
-                return { ...number, isFlipped: false, isMatched: false};
+                // number.isMatched === false ? { ...number, isFlipped: false} : number
+                return number.isMatched
+                  ? { ...number, isFlipped: true }
+                  : { ...number, isFlipped: false, isMatched: false };
               })
             ),
-          1000
+          550
         );
       }
     }
@@ -70,7 +75,6 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
         isFlipped: false,
         isMatched: false,
       };
-
       numberArray.push(number, duplicateNumber);
     }
     const randomisedNumbers = numberArray.sort(() => Math.random() - 0.5);
@@ -99,8 +103,6 @@ function FourByFour({ menuModalOpen, onStartGame, onOpenMenu }: any) {
       </CircleButton>
     );
   });
-
-  console.log(circles);
 
   return (
     <>
